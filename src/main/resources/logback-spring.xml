@@ -1,0 +1,34 @@
+
+<configuration>
+
+    <!-- Appender ghi log ra console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender ghi log ra file app.log -->
+    <appender name="APP_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>app.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <!-- Logger cho gói com.ra -->
+    <logger name="com.ra" level="INFO" additivity="false">
+        <appender-ref ref="APP_FILE" />
+    </logger>
+
+
+    <!-- Logger cho org.jboss.logging, nếu cần -->
+    <logger name="org.jboss.logging" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <!-- Logger gốc -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <!--        <appender-ref ref="APP_FILE" />-->
+    </root>
+</configuration>
