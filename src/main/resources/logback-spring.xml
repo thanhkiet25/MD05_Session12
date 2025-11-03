@@ -7,7 +7,7 @@
             <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
         </encoder>
     </appender>
-
+<!---->
     <!-- Appender ghi log ra file app.log -->
     <appender name="APP_FILE" class="ch.qos.logback.core.FileAppender">
         <file>app.log</file>
